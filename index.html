@@ -504,6 +504,11 @@
 
     <!-- custom js -->
     <script src="js/custom.js"></script>
+    <script>
+        if (!window.MediaRecorder) {
+            document.write(decodeURI('%3Cscript defer src="ios-support.js">%3C/script>'))
+        }
+    </script>
     <script src="index.js"></script>
 </body>
 

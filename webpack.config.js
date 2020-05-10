@@ -2,9 +2,12 @@ const path = require('path');
 
 module.exports = {
     mode: 'production',
-    entry: './js/index.js',
+    entry: {
+        index: './js/index.js',
+        'ios-support': './js/ios-support.js'
+    },
     output: {
         path: path.resolve(__dirname, ''),
-        filename: 'index.js'
+        filename: '[name].js'
     }
 };
