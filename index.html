@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>سیادہ | التعرف على مريض كورونا المستجد من السعال</title>
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css">
+    <!-- swiper CSS -->
+    <link rel="stylesheet" href="css/slick.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.custom.css" />
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase.js"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Changa:wght@500&family=Markazi+Text&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        h1 h2 h3 h4 {
+            font-family: 'Cairo', sans-serif;
+        }
+
+        div p {
+            color: #303030;
+            /*font-size: 20px;*/
+            font-weight: 400;
+            font-family: 'Markazi Text', serif;
+        }
+
+        .btn.btn-default.active,
+        .btn.btn-default:active {
+            color: #fff;
+            background-color: #87654d;
+            outline: none;
+        }
+
+        .btn.btn-default.active.focus,
+        .btn.btn-default.active:focus,
+        .btn.btn-default.active:hover,
+        .btn.btn-default:active.focus,
+        .btn.btn-default:active:focus,
+        .btn.btn-default:active:hover {
+            color: #fff;
+            background-color: #87654d;
+            outline: none;
+            box-shadow: none;
+        }
+
+        /*ol li {
+            list-style: none !important;
+        }*/
+    </style>
+
+
+</head>
+
+<body>
+    <!--::header part start::-->
+    <header class="main_menu">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand main_logo" href="index.html"> <img src="img/ciada-uqu-logo_white.png"
+                                alt="logo">
+                        </a>
+                        <a class="navbar-brand single_page_logo" href="index.html"> <img
+                                src="img/ciada-uqu-logo_white.png" alt="logo">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="menu-icon">
+                                <i class="flaticon-menu"></i>
+                            </span>
+                        </button>
+
+                        <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <!-- <li class="nav-item">
+                                    <a class="nav-link" href="#home">Home</a>
+                                </li> -->
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#introduction">عن البحث</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#app-start">أرغب بالمشاركة الآن</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#team">الفريق البحثي</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--::Header part end::-->
+
+    <!--::banner part start::-->
+    <section class="banner_part" id="home" style="margin-bottom: 0px;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <!--div class="col-lg-5">
+                    <div class="banner_img d-none d-lg-block">
+                        <img src="img/virus.png" alt="">
+                    </div>
+                </div-->
+                <div class="col-lg-7" id="title">
+                    <div class="banner_text">
+                        <div class="banner_text_iner">
+                            <h1> بحث علمي خاص بتوقع
+                                مريض فيروس كورونا المستجد (COVID-19) من صوت السعال </h1>
+                            <h2 style="margin-top: 0px !important; text-align: center;"><small>Research attempt for
+                                    COVID-19 self-diagnosis </small> </h2>
+                            <!--div id="soon">
+                       	    	<h2 style="text-align: center;">قريبًا</h2>
+                            	<img src="img/coming_soon.png">
+                            </div-->
+                        </div>
+                    </div>
+                </div>
+                <!--div class="col-lg-5">
+                    <div class="banner_img d-none d-lg-block">
+                        <!--img src="img/virus.png" alt="">
+                    </div>
+                </div-->
+            </div>
+        </div>
+        <img src="img/animate_icon/Ellipse_7.png" alt="" class="feature_icon_1 custom-animation1">
+        <img src="img/animate_icon/Ellipse_8.png" alt="" class="feature_icon_2 custom-animation2">
+        <img src="img/animate_icon/Ellipse_1.png" alt="" class="feature_icon_3 custom-animation3">
+        <img src="img/animate_icon/Ellipse_2.png" alt="" class="feature_icon_4 custom-animation4">
+        <img src="img/animate_icon/Ellipse_3.png" alt="" class="feature_icon_5 custom-animation5">
+        <img src="img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_6 custom-animation6">
+    </section>
+    <!--::banner part start::-->
+
+    <div class="container" id="introduction">
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <div class="intro">
+                    <img src="img/icon/ques.png">
+                    <h1>هل يمكننا التعرف على مريض فيروس كرونا المستجد (COVID-19) من خلال سعاله فقط؟</h1>
+                    <!--h3>الإجابة على هذا السؤال هي ما يهدف إليه بحثنا هذا</h3-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--::about_us part start::-->
+    <section class="about_us section_padding" style="margin-top: 0px; margin-bottom: 0px;">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6 col-lg-6" style="text-align: center;">
+                    <div class="about_us_text">
+                        <img src="img/icon/ans.png" alt="">
+                        <p>استطاع بعض الباحثين مؤخرا تسخير تقنيات
+                            الذكاء الاصطناعي لتمييز بعض أمراض الجهاز التنفسي (مثل نزلات البرد و السعال الديكي) بنجاح من
+                            خلال
+                            تحليل الموجة الصوتية لسعال المريض فقط دون الحاجة إلى أي تحليلات مختبرية، و ما نهدف إليه في
+                            هذا البحث
+                            هو تقصي ما إذا كان من الممكن تمييز مريض فيروس كورونا المستجد (COVID-19) من خلال سعاله فقط.
+                        </p>
+
+                        <p>وحيث أن تقنيات الذكاء الاصطناعي
+                            و بالأخص تعلم الآلة تعتمد بشكل كبير على كمية البيانات و الأمثلة التي تستطيع الآلة التعلم من
+                            خلالها، لذلك تم إنشاء هذه الصفحة لتجميع
+                            أصوات السعال المختلفة من متبرعين و متبرعات بالغين (فوق سن 18 سنة) سواء أكانوا مصابين بفيروس
+                            كورونا المستجد (COVID-19) أو غيره من أمراض الجهاز التنفسي شافاهم الله جميعا. </p>
+
+                        <p>فإذا أردت عزيزي القارئ المشاركة في هذه التجربة العلمية و التبرع بصوت سعالك فكل ما عليك هو
+                            اتباع تعليمات تسجيل صوت السعال أدناه و تزويدنا ببعض المعلومات و التي سيتم استخدامها إلى
+                            جانب التسجيل الصوتي لسعالك للبحث العلمي فقط في مركز سياده، مع العلم أنه لن يتم
+                            الاحتفاظ بأي معلومات شخصية تدل عليكم (مثل الاسم و المدينة و البريد الإلكتروني).</p>
+
+                        <!-- <a href="#" class="btn_2">learn more</a> -->
+                    </div>
+                </div>
+                <!-- <div class="col-md-6 col-lg-6">
+                    <div class="learning_img">
+                        <img src="img/about_img.png" alt="">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        <img src="img/animate_icon/Ellipse_4.png" alt="" class="feature_icon_1 custom-animation1">
+    </section>
+    <!--::about_us part end::-->
+
+
+    <!--::subscribe us part end::-->
+    <section class="subscribe_part padding_bottom" id="app-start">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="subscribe_part_text text-center">
+                        <h2>هذا البحث حاصل على موافقة اللجنة المحلية لأخلاقيات البحث العلمي بجامعة أم القرى</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="img/animate_icon/Ellipse_5.png" alt="" class="feature_icon_2 custom-animation2">
+    </section>
+    <!--::subscribe us part end::-->
+
+    <div class="container">
+        <div class=" col-md-10 offset-md-1">
+
+            <div class="panel panel-default" style="text-align: right;">
+
+                <h3 style="text-align: center;">نرجو قبل البدء في التسجيل أن تقوم بالإجابة على الأسئلة التالية</h3>
+
+                <div class="panel-heading" style="background-color: #c8aa50; color: #fff;">
+                    <p style="color:#fff">ستساعدنا هذه البيانات على تحسين جودة ودقة التوقع، و هي بيانات عامة لا يمكن أن
+                        تدل على شخص بعينه حيث أننا لن نقوم بتخزين أي بيانات شخصية (مثل الاسم و العنوان و البريد
+                        الإلكتروني) حفاظًا على خصوصيتكم</p>
+                </div>
+                <div class="panel-body">
+                    الجنس:
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                        <label class="btn btn-default" onclick="setGender('male');">
+                            <input type="radio" id="male" autocomplete="off">
+                            ذكر
+                        </label>
+                        <label class="btn btn-default" onclick="setGender('female');">
+                            <input type="radio" id="female" autocomplete="off">
+                            أنثى
+                        </label>
+                    </div>
+                    <br />
+
+                    العمر:
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                        <label class="btn btn-default" onclick="setAge('over-65');">
+                            <input type="radio" autocomplete="off" id="over-65" />ومافوق 65
+                        </label>
+                        <label class="btn btn-default" onclick="setAge('51-65');">
+                            <input type="radio" autocomplete="off" id="51-65" />51-65
+                        </label>
+                        <label class="btn btn-default" onclick="setAge('41-50');">
+                            <input type="radio" autocomplete="off" id="41-50" />41-50
+                        </label>
+                        <label class="btn btn-default" onclick="setAge('26-40');">
+                            <input type="radio" autocomplete="off" id="26-40" />26-40
+                        </label>
+                        <label class="btn btn-default" onclick="setAge('18-25');">
+                            <input type="radio" autocomplete="off" id="18-25" />18-25
+                        </label>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="panel-body">
+                    هل أنت مصاب حالياً بفيروس كورونا المستجد (COVID-19)؟
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                        <label class="btn btn-default" onclick="setCovid('no');">
+                            <input type="radio" autocomplete="off" id="covid-no" /> لا
+                        </label>
+                        <label class="btn btn-default" onclick="setCovid('yes');">
+                            <input type="radio" autocomplete="off" id="covid-yes" /> نعم
+                        </label>
+                    </div>
+                    <br />
+                </div>
+
+                <div class="panel-body">
+                    هل تعاني من أي أمراض آخرى؟ إذا نعم أذكرها
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                        <label class="btn btn-default" onclick="setMedical('maybe');">
+                            <input type="radio" autocomplete="off" id="med-maybe" /> لا أعلم
+                        </label>
+                        <label class="btn btn-default" onclick="setMedical('no');">
+                            <input type="radio" autocomplete="off" id="med-no" /> لا
+                        </label>
+                        <label class="btn btn-default" onclick="setMedical('yes');">
+                            <input type="radio" autocomplete="off" id="med-yes" /> نعم
+                        </label>
+                    </div>
+                    <br />
+                    <input style="margin-top: 10px; display: none; text-align: center;" id="medical" type="text"
+                        placeholder="أدخل اسم المرض هنا">
+                    <br />
+                    <!--span style="text-align:center;">
+		    	<button id="submit" onclick="writeData(new Date());" style="background-color: #c8aa50; color: #fff; border-radius: 5px;">إرســـال</button>
+		    </span-->
+                    <br />
+                </div>
+
+
+
+            </div>
+
+            <div class="panel panel-default" style="text-align: right;">
+                <h3 style="text-align: center;">حان الآن وقت تسجيل صوت سعالك</h3>
+
+
+                <div class="panel-heading" style="background-color: #c8aa50; color: #fff;">
+                    <h4>التسجيل الصوتي</h4>
+                </div>
+
+                <div class="panel-body">
+                    <ol>
+                        <li>ضع هاتفك المحمول أو الكمبيوتر على بعد ذراع من جهة اليمين</li>
+                        <li>اضغط على زر "إبدأ التسجيل" وقم بالسعال لمرتين متاليتين</li>
+                        <ul>
+                            <li> قد تظهر لك نافذة تطلب السماح باستخدام المايكروفون نرجو الضغط على "موافق (OK) " أو
+                                "السماح (Allow)" </li>
+                        </ul>
+                        <li>اضغط على زر "أوقف التسجيل" حين الإنتهاء</li>
+                        <li>ستستمع مباشرة إلى الصوت المسجل، إذا كنت راضٍ عنه اضغط "إبدأ برفع الملف الصوتي""</li>
+                        <ul>
+                            <li>بإمكانك إعادة التسجيل دون حفظ للملف الصوتي إذا لم تكن راضٍ عن التسجيل أو قررت الانسحاب
+                                من المشاركة</li>
+                        </ul>
+                    </ol>
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-left: 25px;">
+                        <label class="btn btn-default" id="stop">
+                            <input type="radio" autocomplete="off" /> أوقف التسجيل
+                        </label>
+                        <label class="btn btn-default" id="record" onclick="recordAudio();">
+                            <input type="radio" autocomplete="off" /> ابدأ التسجيل
+                        </label>
+
+                    </div>
+                    <br />
+                    <div id="upload" style="display: none;">
+                        <h4 style="margin-left: 25px;">ستستمع الآن إلى الصوت المسجل، إذا كنت راضٍ عن التسجيل نرجو الضغط
+                            على "إبدأ برفع الملف" لنبدأ في رفع الملف الصوتي، كما يمكنك إعادة تشغيل الصوت المسجل بالضغط
+                            على "أعد تشغيل الصوت المسجل"، كما يمكنك محاولة التسجيل مرة أخرى بالضغط على "أريد إعادة
+                            التسجيل"
+                        </h4>
+                        <div style="margin-left: 25px;" class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-primary" id="play-again">
+                                <input type="radio" autocomplete="off" /> أعد تشغيل الصوت المسجل
+                            </label>
+                            <label class="btn btn-success" id="upload-yes">
+                                <input type="radio" autocomplete="off" /> ابدأ برفع الملف
+                            </label>
+                            <label class="btn btn-warning" id="upload-no" onclick="recordAudio();">
+                                <input type="radio" autocomplete="off" /> أريد إعادة التسجيل
+                            </label>
+                            <label class="btn btn-danger" id="upload-exit" onclick="exitUpload();">
+                                <input type="radio" autocomplete="off" /> إنسحاب من المشاركة
+                            </label>
+                        </div>
+                    </div>
+                    <h4 id="upload-status"
+                        style="margin-top: 20px; margin-left: 25px; color: red; font-weight: bolder; display: none">
+                    </h4>
+                    <br />
+                </div>
+            </div>
+
+
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 offset-md-1" style="text-align: center;">
+                        <h2 style="font-weight: 700;">هل تريد المساهمة في البحث بطريقة أخرى؟</h2>
+                        <p>قم بالتواصل معنا على
+                            <a href="ciada@uqu.edu.sa" style=" font-size: x-large;">ciada@uqu.edu.sa</a></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Survey - END -->
+
+        </div>
+    </div>
+
+
+
+    <!--::footer_part start::-->
+    <footer class="footer_part" id="team">
+        <div class="container-fluid">
+            <section class="our-webcoderskull padding-lg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <h2 class="col-md-12">الفريق البحثي</h2>
+                    </div>
+                    <div class="card-deck align-items-top">
+
+                        <div class="card">
+                            <img src="img/rani_round.png" class="card-img-top" alt="DrRani">
+                            <div class="card-body">
+                                <h3 class="card-title">راني الصيرفي</h3>
+                                <p class="card-text">أستاذ مساعد بقسم الجراحة كلية الطب بجامعة أم القرى، إستشاري
+                                    جراحة عامة وعناية مركزة</p>
+                                <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+                            </div>
+                        </div>
+
+
+
+                        <div class="card" `>
+                            <img src="img/ciada_round.png" class="card-img-top" alt="DrRani">
+                            <div class="card-body">
+                                <h3 class="card-title">سارة الشريف</h3>
+                                <p class="card-text">أستاذة علوم الحاسب المساعد بكلية الحاسب الآلي ونظم المعلومات
+                                    بجامعة أم القرى، خبيرة في النمذجة الصوتية و اللغوية وتقنيات السمع و الكلام و اللغة
+                                    العربية</p>
+                                <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+                            </div>
+                        </div>
+
+
+
+                        <div class="card">
+                            <img src="img/eisa_round.png" class="card-img-top" alt="DrRani">
+                            <div class="card-body">
+                                <h3 class="card-title">عيسى العنزي</h3>
+                                <p class="card-text">أستاذ علوم الحاسب المساعد بكلية الحاسب الآلي ونظم المعلومات بجامعة
+                                    أم القرى، مهتم بحدود تعلم الآلة
+                                    مع الإنسان والمشرف العام على مركز سياده</p>
+                                <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+                            </div>
+                        </div>
+
+
+
+                        <div class="card">
+                            <img src="img/wesam_round.png" class="card-img-top" alt="DrRani">
+                            <div class="card-body">
+                                <h3 class="card-title">وسام الصبان</h3>
+                                <p class="card-text">أستاذ نظم المعلومات المساعد بكلية الحاسب الآلي ونظم المعلومات
+                                    بجامعة أم القرى، خبير في النظم الذكية و المركبات ذاتية التحكم</p>
+                                <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <img src="img/waleed_round.png" class="card-img-top" alt="DrRani">
+                            <div class="card-body">
+                                <h3 class="card-title">وليد الأسمري</h3>
+                                <p class="card-text">أستاذ هندسة الحاسب المساعد بكلية الحاسب الآلي ونظم المعلومات
+                                    بجامعة أم القرى، خبير الشبكات اللاسلكية ومعالجة الإشارات</p>
+                                <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+                            </div>
+                        </div>
+
+
+                        <div class="card">
+                            <img src="img/ciada_round.png" class="card-img-top" alt="DrRani">
+                            <div class="card-body">
+                                <h3 class="card-title">سارة القرشي</h3>
+                                <p class="card-text">طالبة ماجستير في علوم وهندسة الحاسب الآلي في كلية الحاسب الآلي
+                                    ونظم المعلومات بجامعة أم القرى</p>
+                                <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="copyright">
+            كافة الحقوق محفوظة لمركز الابتكار و التطوير في الذكاء الاصطناعي (سياده) © 2020
+        </div>
+    </footer>
+    <!--::footer_part end::-->
+    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase.js"></script>
+
+    <!-- jquery plugins here-->
+    <script src="js/jquery-1.12.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- easing js -->
+    <!-- swiper js -->
+    <!-- swiper js -->
+    <script src="js/masonry.pkgd.js"></script>
+    <!-- particles js -->
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

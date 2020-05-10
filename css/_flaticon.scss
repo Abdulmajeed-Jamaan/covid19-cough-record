@@ -1,0 +1,76 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 09/05/2020 12:41
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("../fonts/icons/Flaticon.eot");
+  src: url("../fonts/icons/Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/icons/Flaticon.woff2") format("woff2"),
+       url("../fonts/icons/Flaticon.woff") format("woff"),
+       url("../fonts/icons/Flaticon.ttf") format("truetype"),
+       url("../fonts/icons/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-list:before { content: "\f100"; }
+.flaticon-menu:before { content: "\f101"; }
+.flaticon-menu-1:before { content: "\f102"; }
+.flaticon-menu-2:before { content: "\f103"; }
+.flaticon-menu-3:before { content: "\f104"; }
+.flaticon-menu-4:before { content: "\f105"; }
+.flaticon-mail:before { content: "\f106"; }
+.flaticon-email:before { content: "\f107"; }
+.flaticon-email-1:before { content: "\f108"; }
+.flaticon-email-2:before { content: "\f109"; }
+.flaticon-twitter:before { content: "\f10a"; }
+.flaticon-twitter-1:before { content: "\f10b"; }
+.flaticon-twitter-2:before { content: "\f10c"; }
+.flaticon-twitter-3:before { content: "\f10d"; }
+.flaticon-information:before { content: "\f10e"; }
+.flaticon-link:before { content: "\f10f"; }
+.flaticon-worldwide:before { content: "\f110"; }
+.flaticon-world-wide-web:before { content: "\f111"; }
+    
+    $font-Flaticon-list: "\f100";
+    $font-Flaticon-menu: "\f101";
+    $font-Flaticon-menu-1: "\f102";
+    $font-Flaticon-menu-2: "\f103";
+    $font-Flaticon-menu-3: "\f104";
+    $font-Flaticon-menu-4: "\f105";
+    $font-Flaticon-mail: "\f106";
+    $font-Flaticon-email: "\f107";
+    $font-Flaticon-email-1: "\f108";
+    $font-Flaticon-email-2: "\f109";
+    $font-Flaticon-twitter: "\f10a";
+    $font-Flaticon-twitter-1: "\f10b";
+    $font-Flaticon-twitter-2: "\f10c";
+    $font-Flaticon-twitter-3: "\f10d";
+    $font-Flaticon-information: "\f10e";
+    $font-Flaticon-link: "\f10f";
+    $font-Flaticon-worldwide: "\f110";
+    $font-Flaticon-world-wide-web: "\f111";
