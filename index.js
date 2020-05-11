@@ -80,16 +80,19 @@ function recordAudio() {
                 document.getElementById('stop').className = 'btn btn-danger active';
                 upload_status.style.display = 'none';
 
-                let audioChunks = null;
+                let audioChunks = [];
                 mediaRecorder.addEventListener("dataavailable", event => {
-                    audioChunks = event.data;
+                    audioChunks.push(event.data);
+                    console.log(audioChunks);
+                    // Rremove Previus Record If exist
                     document.getElementById('audio-element') != null ? document.getElementById('audio-element').remove() : '';
+
+                    // Create New Element For Audio
                     var audio = document.createElement("audio");
                     audio.id = 'audio-element';
                     audio.controls = true;
                     audio.src = URL.createObjectURL(event.data)
                     audioContainer.appendChild(audio);
-                    audio.play
                 });
 
                 mediaRecorder.addEventListener("stop", () => {
