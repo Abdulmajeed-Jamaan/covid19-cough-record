@@ -83,7 +83,6 @@ function recordAudio() {
                 let audioChunks = [];
                 mediaRecorder.addEventListener("dataavailable", event => {
                     audioChunks.push(event.data);
-                    console.log(audioChunks);
                     // Rremove Previus Record If exist
                     document.getElementById('audio-element') != null ? document.getElementById('audio-element').remove() : '';
 
