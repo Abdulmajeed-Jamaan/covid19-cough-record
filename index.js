@@ -74,6 +74,7 @@ function recordAudio() {
                 const mediaRecorder = new MediaRecorder(stream);
                 const date = new Date();
                 const audioContainer = document.getElementById('audio-container');
+                document.getElementById('audio-element') != null ? document.getElementById('audio-element').remove() : '';
 
                 mediaRecorder.start();
                 document.getElementById('stop').className = 'btn btn-danger active';
@@ -87,21 +88,17 @@ function recordAudio() {
                     audio.id = 'audio-element';
                     audio.controls = true;
                     audio.src = URL.createObjectURL(event.data)
-                    audio.style.display = 'none';
                     audioContainer.appendChild(audio);
-                    audio.play()
+                    audio.play
                 });
 
                 mediaRecorder.addEventListener("stop", () => {
-                    // const audioUrl = URL.createObjectURL(audioChunks);
-                    // audioEl.style.display = 'block';
-                    // audioEl.src = audioUrl;
-                    // audioEl.play();
+
                     // uploadData(audioBlob, date);
                 });
                 play.addEventListener("click", event => {
-                    audioEl.style.display = 'block';
-                    audioEl.play();
+                    var audio = document.getElementById('audio-element');
+                    audio.play();
                     // uploadData(audioBlob, date);
                 });
                 upload.addEventListener("click", event => {
