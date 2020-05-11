@@ -83,13 +83,17 @@ function recordAudio() {
                 let audioChunks = null;
                 mediaRecorder.addEventListener("dataavailable", event => {
                     audioChunks = event.data;
+                    var audio = document.createElement("audio");
+                    audio.controls = true;
+                    audio.src = URL.createObjectURL(event.data)
+                    audioEl.appendChild(audio);
                 });
 
                 mediaRecorder.addEventListener("stop", () => {
-                    const audioUrl = URL.createObjectURL(audioChunks);
-                    audioEl.style.display = 'block';
-                    audioEl.src = audioUrl;
-                    audioEl.play();
+                    // const audioUrl = URL.createObjectURL(audioChunks);
+                    // audioEl.style.display = 'block';
+                    // audioEl.src = audioUrl;
+                    // audioEl.play();
                     // uploadData(audioBlob, date);
                 });
                 play.addEventListener("click", event => {
