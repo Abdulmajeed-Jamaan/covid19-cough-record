@@ -85,14 +85,17 @@ function recordAudio() {
                 mediaRecorder.addEventListener("stop", () => {
                     var audioBlob = new Blob(audioChunks);
                     const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = new Audio(audioUrl);
+                    const audio = document.getElementById('audio-element');
+                    audio.src = audioUrl;
                     audio.play();
                     // uploadData(audioBlob, date);
                 });
                 play.addEventListener("click", event => {
+                    console.log(audioChunks);
                     var audioBlob = new Blob(audioChunks);
                     const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = new Audio(audioUrl);
+                    const audio = document.getElementById('audio-element');
+                    audio.src = audioUrl;
                     audio.play();
                     // uploadData(audioBlob, date);
                 });
