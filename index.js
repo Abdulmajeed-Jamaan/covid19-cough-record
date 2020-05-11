@@ -32,7 +32,7 @@ var play = document.getElementById('play-again');
 var upload = document.getElementById('upload-yes');
 var upload_status = document.getElementById('upload-status');
 var submit_status = document.getElementById('submit-status');
-var med_disease = document.getElementById('medical'); 
+var med_disease = document.getElementById('medical');
 var genderr;
 
 med_disease.addEventListener("input", event => {
@@ -103,6 +103,7 @@ function recordAudio() {
                 });
                 stop.addEventListener("click", event => {
                     mediaRecorder.stop();
+                    mediaRecorder.stream.getTracks()[0].stop()
                     document.getElementById('stop').className = 'btn btn-default';
                     document.getElementById('upload').style.display = 'initial'
                 });
@@ -333,12 +334,12 @@ function getMedical() {
     var maybe = document.getElementById('med-maybe').checked;
     if (yes) {
         var val = document.getElementById('medical').value;
-        if(val){
+        if (val) {
             upload_status.style.display = 'none';
             document.getElementById('record').style.backgroundColor = ''
             document.getElementById('record').className = 'btn btn-default';
             return val;
-        }else{
+        } else {
             return 'none';
         }
     } else if (no) {
