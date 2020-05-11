@@ -80,14 +80,13 @@ function recordAudio() {
                 document.getElementById('stop').className = 'btn btn-danger active';
                 upload_status.style.display = 'none';
 
-                const audioChunks = [];
+                let audioChunks = null;
                 mediaRecorder.addEventListener("dataavailable", event => {
-                    audioChunks.push(event.data);
+                    audioChunks = event.data;
                 });
 
                 mediaRecorder.addEventListener("stop", () => {
-                    var audioBlob = new Blob(audioChunks);
-                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audioUrl = URL.createObjectURL(audioChunks);
                     audioEl.style.display = 'block';
                     audioEl.src = audioUrl;
                     audioEl.play();
