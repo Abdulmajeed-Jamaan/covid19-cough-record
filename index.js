@@ -73,6 +73,9 @@ function recordAudio() {
             .then(stream => {
                 const mediaRecorder = new MediaRecorder(stream);
                 const date = new Date();
+                const audioEl = document.getElementById('audio-element');
+                audioEl.style.display = 'none';
+
                 mediaRecorder.start();
                 document.getElementById('stop').className = 'btn btn-danger active';
                 upload_status.style.display = 'none';
@@ -85,18 +88,14 @@ function recordAudio() {
                 mediaRecorder.addEventListener("stop", () => {
                     var audioBlob = new Blob(audioChunks);
                     const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = document.getElementById('audio-element');
-                    audio.src = audioUrl;
-                    audio.play();
+                    audioEl.style.display = 'block';
+                    audioEl.src = audioUrl;
+                    audioEl.play();
                     // uploadData(audioBlob, date);
                 });
                 play.addEventListener("click", event => {
-                    console.log(audioChunks);
-                    var audioBlob = new Blob(audioChunks);
-                    const audioUrl = URL.createObjectURL(audioBlob);
-                    const audio = document.getElementById('audio-element');
-                    audio.src = audioUrl;
-                    audio.play();
+                    audioEl.style.display = 'block';
+                    audioEl.play();
                     // uploadData(audioBlob, date);
                 });
                 upload.addEventListener("click", event => {
@@ -105,8 +104,10 @@ function recordAudio() {
                     uploadData(audioBlob, date);
                 });
                 stop.addEventListener("click", event => {
-                    mediaRecorder.stop();
-                    mediaRecorder.stream.getTracks()[0].stop()
+                    if (mediaRecorder.state !== 'inactive') {
+                        mediaRecorder.stop();
+                        mediaRecorder.stream.getTracks()[0].stop()
+                    }
                     document.getElementById('stop').className = 'btn btn-default';
                     document.getElementById('upload').style.display = 'initial'
                 });
