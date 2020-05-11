@@ -73,7 +73,7 @@ function recordAudio() {
             .then(stream => {
                 const mediaRecorder = new MediaRecorder(stream);
                 const date = new Date();
-                const audioEl = document.getElementById('audio-element');
+                const audioContainer = document.getElementById('audio-container');
 
                 mediaRecorder.start();
                 document.getElementById('stop').className = 'btn btn-danger active';
@@ -82,10 +82,18 @@ function recordAudio() {
                 let audioChunks = null;
                 mediaRecorder.addEventListener("dataavailable", event => {
                     audioChunks = event.data;
-                    var audio = document.createElement("audio");
-                    audio.controls = true;
-                    audio.src = URL.createObjectURL(event.data)
-                    audioEl.appendChild(audio);
+
+                    if (document.getElementById('audio-element') != null) {
+                        var audio = document.getElementById('audio-element');
+                        audio.src = URL.createObjectURL(event.data)
+                        audio.play();
+                    } else {
+                        var audio = document.createElement("audio");
+                        audio.id = 'audio-element';
+                        audio.controls = true;
+                        audio.src = URL.createObjectURL(event.data)
+                        audioContainer.appendChild(audio);
+                    }
                 });
 
                 mediaRecorder.addEventListener("stop", () => {
