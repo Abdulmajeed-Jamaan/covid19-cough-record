@@ -74,7 +74,6 @@ function recordAudio() {
                 const mediaRecorder = new MediaRecorder(stream);
                 const date = new Date();
                 const audioEl = document.getElementById('audio-element');
-                audioEl.style.display = 'none';
 
                 mediaRecorder.start();
                 document.getElementById('stop').className = 'btn btn-danger active';
