@@ -124,7 +124,7 @@ function recordAudio() {
                         mediaRecorder.stream.getTracks()[0].stop()
                     }
                     document.getElementById('stop').className = 'btn btn-default';
-                    document.getElementById('upload').style.display = 'initial'
+                    document.getElementById('upload').style.display = 'initial';
                 });
             });
 
@@ -144,6 +144,7 @@ function writeData(date) {
     var disease = getMedical();
     var effect = getEffect();
     var recordMethod = getRecordMethod();
+    var timestamp = (typeof date === 'undefined') ? 'null' : date.toString();
 
     gender = (typeof gender === 'undefined') ? 'null' : gender;
     age = (typeof age === 'undefined') ? 'null' : age;
@@ -155,6 +156,7 @@ function writeData(date) {
     var database = firebase.database();
     // var key = database.ref('users/').push().key;
     database.ref('users/' + date).set({
+        timeStamp: timestamp,
         gender: gender,
         age: age,
         covid: covid,
@@ -235,9 +237,9 @@ function getGender() {
     var male = document.getElementById('male').checked;
     var female = document.getElementById('female').checked;
     if (male) {
-        return 'Male';
+        return 'male';
     } else if (female) {
-        return 'Female';
+        return 'female';
     } else {
         return null;
     }
@@ -282,6 +284,9 @@ function getAge() {
 function exitUpload() {
     document.getElementById('upload').style.display = 'none';
     document.getElementById('stop').className = 'btn btn-default';
+    upload_status.style.display = 'none';
+    document.getElementById('record').style.backgroundColor = ''
+    document.getElementById('record').className = 'btn btn-default';
 }
 
 function setAge(ageGroup) {
