@@ -287,31 +287,84 @@
                 </div>
 
                 <div class="panel-body">
-                    هل تعاني من أي أمراض آخرى؟ إذا نعم أذكرها
+                    هل تعاني من أحد هذه الأمراض ؟
                     <br />
                     <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
-                        <label class="btn btn-default" onclick="setMedical('maybe');">
-                            <input type="radio" autocomplete="off" id="med-maybe" /> لا أعلم
+                        <label class="btn btn-default" onclick="setMedical('none')">
+                            <input type="radio" autocomplete="off" name="medical" value="none" id="m-none" />لا أعاني من
+                            أي مرض
                         </label>
-                        <label class="btn btn-default" onclick="setMedical('no');">
-                            <input type="radio" autocomplete="off" id="med-no" /> لا
+                        <label class="btn btn-default" onclick="setMedical('other')">
+                            <input type="radio" autocomplete="off" name="medical" value="other" id="m-other" />مرض آخر
                         </label>
-                        <label class="btn btn-default" onclick="setMedical('yes');">
-                            <input type="radio" autocomplete="off" id="med-yes" /> نعم
+                        <label class="btn btn-default" onclick="setMedical('lung')">
+                            <input type="radio" autocomplete="off" name="medical" value="lung" id="m-lung" />داء
+                            الانسداد الرئوي المزمن
+                        </label>
+                        <label class="btn btn-default" onclick="setMedical('asthma')">
+                            <input type="radio" autocomplete="off" name="medical" value="asthma" id="m-asthma" />الربو
+                        </label>
+                        <label class="btn btn-default" onclick="setMedical('chest')">
+                            <input type="radio" autocomplete="off" name="medical" value="chest" id="m-chest" />التهاب
+                            الصدر (ذات الرئة)
                         </label>
                     </div>
                     <br />
                     <input style="margin-top: 10px; display: none; text-align: center;" id="medical" type="text"
-                        placeholder="أدخل اسم المرض هنا">
-                    <br />
-                    <!--span style="text-align:center;">
-		    	<button id="submit" onclick="writeData(new Date());" style="background-color: #c8aa50; color: #fff; border-radius: 5px;">إرســـال</button>
-		    </span-->
+                        onchange="setMedical()" placeholder="أدخل اسم المرض هنا">
                     <br />
                 </div>
 
+                <div class="panel-body">
+                    هل تعاني من أحد هذه الأعراض ؟
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                        <label class="btn btn-default" onclick="setEffect()">
+                            <input type="radio" name="effect" value="none" autocomplete="off" id="e-none" />لا أعاني من
+                            هذه الأعراض
+                        </label>
+                        <label class="btn btn-default" onclick="setEffect()">
+                            <input type="radio" name="effect" value="breath" autocomplete="off" id="e-breath" />ضيق في
+                            التنفس
+                        </label>
+                        <label class="btn btn-default" onclick="setEffect()">
+                            <input type="radio" name="effect" value="throat" autocomplete="off" id="e-throat" />إلتهاب
+                            الحلق أو الحنجرة
+                        </label>
+                        <label class="btn btn-default" onclick="setEffect()">
+                            <input type="radio" name="effect" value="cough" autocomplete="off" id="e-cough" />سعال
+                        </label>
+                        <label class="btn btn-default" onclick="setEffect()">
+                            <input type="radio" name="effect" value="heat" autocomplete="off" id="e-heat" />إرتفاع في
+                            درجة الحرارة
+                        </label>
+                    </div>
+                    <br />
+                </div>
 
-
+                <div class="panel-body">
+                    طريقة التسجيل السعال ستكون باستخدام مايكروفون :
+                    <br />
+                    <div class="btn-group" data-toggle="buttons" style="margin-top: 10px;">
+                        <label class="btn btn-default" onclick="setRecordMethod()">
+                            <input type="radio" name="record-method" value="computer" autocomplete="off"
+                                id="rm-computer" />جهاز الحاسب الداخلي
+                        </label>
+                        <label class="btn btn-default" onclick="setRecordMethod()">
+                            <input type="radio" name="record-method" value="phone" autocomplete="off"
+                                id="rm-phone" />جهاز الجوال الداخلي
+                        </label>
+                        <label class="btn btn-default" onclick="setRecordMethod()">
+                            <input type="radio" name="record-method" value="wired-headset" autocomplete="off"
+                                id="rm-wire-earphone" />السماعة السلكية
+                        </label>
+                        <label class="btn btn-default" onclick="setRecordMethod()">
+                            <input type="radio" name="record-method" value="wirless-headset" autocomplete="off"
+                                id="rm-wirless-earphone" />السماعة اللاسلكية
+                        </label>
+                    </div>
+                    <br />
+                </div>
             </div>
 
             <div class="panel panel-default" style="text-align: right;">

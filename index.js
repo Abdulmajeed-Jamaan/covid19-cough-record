@@ -59,16 +59,25 @@ function recordAudio() {
         upload_status.innerText = 'حدد حالتك الطبية أولا';
         upload_status.style.color = 'red';
         document.getElementById('record').style.backgroundColor = 'red';
-    } else if (getMedical() === 'none') {
-        console.log(getMedical());
+    } else if (getMedical() === null) {
         upload_status.style.display = 'initial';
-        upload_status.innerText = 'حدد حالة مرضك أولاً';
+        upload_status.innerText = 'حدد أحد الأمراض أولاً';
+        upload_status.style.color = 'red';
+        document.getElementById('record').style.backgroundColor = 'red';
+    }
+    else if (getEffect() === null) {
+        upload_status.style.display = 'initial';
+        upload_status.innerText = 'حدد أحد الأعراض أولاً';
+        upload_status.style.color = 'red';
+        document.getElementById('record').style.backgroundColor = 'red';
+    }
+    else if (getRecordMethod() === null) {
+        upload_status.style.display = 'initial';
+        upload_status.innerText = 'حدد طريقة تسجيل السعال أولاً';
         upload_status.style.color = 'red';
         document.getElementById('record').style.backgroundColor = 'red';
     }
     else {
-        // document.getElementById('record').style.backgroundColor = '#87654d';
-        console.log(getMedical());
         navigator.mediaDevices.getUserMedia({ audio: true })
             .then(stream => {
                 const mediaRecorder = new MediaRecorder(stream);
@@ -90,6 +99,7 @@ function recordAudio() {
                     var audio = document.createElement("audio");
                     audio.id = 'audio-element';
                     audio.controls = true;
+                    audio.style.width = '100%';
                     audio.src = URL.createObjectURL(event.data)
                     audioContainer.appendChild(audio);
                 });
@@ -126,21 +136,31 @@ function writeData(date) {
     console.log('Age ' + getAge());
     console.log('Covid ' + getCovid());
     console.log('Medical ' + getMedical());
+    console.log('effect ' + getEffect());
+    console.log('recordMethod ' + getRecordMethod());
     var gender = getGender();
     var age = getAge();
     var covid = getCovid();
     var disease = getMedical();
+    var effect = getEffect();
+    var recordMethod = getRecordMethod();
+
     gender = (typeof gender === 'undefined') ? 'null' : gender;
     age = (typeof age === 'undefined') ? 'null' : age;
     covid = (typeof covid === 'undefined') ? 'null' : covid;
     disease = (typeof disease === 'undefined') ? 'null' : disease;
+    effect = (typeof effect === 'undefined') ? 'null' : effect;
+    recordMethod = (typeof recordMethod === 'undefined') ? 'null' : recordMethod;
+
     var database = firebase.database();
     // var key = database.ref('users/').push().key;
     database.ref('users/' + date).set({
         gender: gender,
         age: age,
         covid: covid,
-        disease: disease
+        disease: disease,
+        effect: effect,
+        recordMethod: recordMethod
     });
 }
 
@@ -313,9 +333,9 @@ function getCovid() {
     var yes = document.getElementById('covid-yes').checked;
     var no = document.getElementById('covid-no').checked;
     if (yes) {
-        return 'Yes';
+        return 'yes';
     } else if (no) {
-        return 'No';
+        return 'no';
     } else {
         return null;
     }
@@ -338,50 +358,73 @@ function setCovid(status) {
 }
 
 function getMedical() {
-    var yes = document.getElementById('med-yes').checked;
-    var no = document.getElementById('med-no').checked;
-    var maybe = document.getElementById('med-maybe').checked;
-    if (yes) {
-        var val = document.getElementById('medical').value;
-        if (val) {
-            upload_status.style.display = 'none';
-            document.getElementById('record').style.backgroundColor = ''
-            document.getElementById('record').className = 'btn btn-default';
-            return val;
-        } else {
-            return 'none';
+
+    var medicalsButtons = document.getElementsByName('medical');
+    var val = document.getElementById('medical').value;
+
+    let result = null;
+    medicalsButtons.forEach(med => {
+        if (med.checked) {
+            if (med.value == 'other') {
+                result = val.length > 2 ? val : null;
+            } else {
+                result = med.value;
+            }
         }
-    } else if (no) {
-        return 'No';
-    } else if (maybe) {
-        return 'Maybe';
-    } else {
-        return 'none';
-    }
+    });
+    return result;
 }
 
 
 function setMedical(status) {
-    var yes = document.getElementById('med-yes');
-    var no = document.getElementById('med-no');
-    var maybe = document.getElementById('med-maybe');
     upload_status.style.display = 'none';
     document.getElementById('record').style.backgroundColor = ''
     document.getElementById('record').className = 'btn btn-default';
-    if (status === 'yes') {
-        yes.checked = true;
-        no.checked = false;
-        maybe.checked = false;
+
+    if (status == 'other') {
         document.getElementById('medical').style.display = 'initial';
-    } else if (status === 'no') {
-        yes.checked = false;
-        no.checked = true;
-        maybe.checked = false;
-        document.getElementById('medical').style.display = 'none';
-    } else if (status === 'maybe') {
-        yes.checked = false;
-        no.checked = false;
-        maybe.checked = true;
+    } else {
         document.getElementById('medical').style.display = 'none';
     }
+}
+
+
+
+function setEffect() {
+    upload_status.style.display = 'none';
+    document.getElementById('record').style.backgroundColor = ''
+    document.getElementById('record').className = 'btn btn-default';
+}
+
+function getEffect() {
+
+    var effectButtons = document.getElementsByName('effect');
+
+    let result = null;
+    effectButtons.forEach(eff => {
+        if (eff.checked) {
+            result = eff.value;
+        }
+    });
+    return result;
+}
+
+function setRecordMethod() {
+    upload_status.style.display = 'none';
+    document.getElementById('record').style.backgroundColor = ''
+    document.getElementById('record').className = 'btn btn-default';
+}
+
+
+function getRecordMethod() {
+
+    var recordMethodButtons = document.getElementsByName('record-method');
+
+    let result = null;
+    recordMethodButtons.forEach(eff => {
+        if (eff.checked) {
+            result = eff.value;
+        }
+    });
+    return result;
 }
