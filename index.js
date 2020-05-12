@@ -382,7 +382,7 @@ function setMedical(status) {
     document.getElementById('record').className = 'btn btn-default';
 
     if (status == 'other') {
-        document.getElementById('medical').style.display = 'initial';
+        document.getElementById('medical').style.display = 'block';
     } else {
         document.getElementById('medical').style.display = 'none';
     }
