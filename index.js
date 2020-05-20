@@ -54,6 +54,11 @@ function recordAudio() {
         upload_status.innerText = 'حدد عمرك أولا';
         upload_status.style.color = 'red';
         document.getElementById('record').style.backgroundColor = 'red';
+    } else if (getSmoke() === null) {
+        upload_status.style.display = 'initial';
+        upload_status.innerText = 'حدد هل أنت مدخن أولا';
+        upload_status.style.color = 'red';
+        document.getElementById('record').style.backgroundColor = 'red';
     } else if (getCovid() === null) {
         upload_status.style.display = 'initial';
         upload_status.innerText = 'حدد حالتك الطبية أولا';
@@ -135,12 +140,14 @@ function writeData(date) {
     console.log('Gender ' + getGender());
     console.log('Age ' + getAge());
     console.log('Covid ' + getCovid());
+    console.log('Smoke ' + getSmoke());
     console.log('Medical ' + getMedical());
     console.log('effect ' + getEffect());
     console.log('recordMethod ' + getRecordMethod());
     var gender = getGender();
     var age = getAge();
     var covid = getCovid();
+    var smoke = getSmoke();
     var disease = getMedical();
     var effect = getEffect();
     var recordMethod = getRecordMethod();
@@ -149,6 +156,7 @@ function writeData(date) {
     gender = (typeof gender === 'undefined') ? 'null' : gender;
     age = (typeof age === 'undefined') ? 'null' : age;
     covid = (typeof covid === 'undefined') ? 'null' : covid;
+    smoke = (typeof smoke === 'undefined') ? 'null' : smoke;
     disease = (typeof disease === 'undefined') ? 'null' : disease;
     effect = (typeof effect === 'undefined') ? 'null' : effect;
     recordMethod = (typeof recordMethod === 'undefined') ? 'null' : recordMethod;
@@ -159,6 +167,7 @@ function writeData(date) {
         timeStamp: timestamp,
         gender: gender,
         age: age,
+        smoke: smoke,
         covid: covid,
         disease: disease,
         effect: effect,
@@ -427,6 +436,26 @@ function getRecordMethod() {
 
     let result = null;
     recordMethodButtons.forEach(eff => {
+        if (eff.checked) {
+            result = eff.value;
+        }
+    });
+    return result;
+}
+
+
+function setSmoke() {
+    upload_status.style.display = 'none';
+    document.getElementById('record').style.backgroundColor = ''
+    document.getElementById('record').className = 'btn btn-default';
+}
+
+function getSmoke() {
+
+    var smokeButtons = document.getElementsByName('smoke');
+
+    let result = null;
+    smokeButtons.forEach(eff => {
         if (eff.checked) {
             result = eff.value;
         }
